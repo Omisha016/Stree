@@ -1,2 +1,2 @@
 # Stree
-Girls one stop site
+Stree is a one-place-stop website for women.
