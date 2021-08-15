@@ -84,27 +84,27 @@
         <!-- Nav Bar Start -->
         <div class="navbar navbar-expand-lg bg-dark navbar-dark">
             <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">S<span>tRee</span></a>
+                <a href="index.html" class="navbar-brand">ST<span>ree</span></a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <li class="logged-out">
+                        <li class="logged-out" style="display: none;">
                             <a href="index.html" class="nav-item nav-link">Home</a>
                         </li>
-                        <li class="logged-out">
+                        <li class="logged-out" style="display: none;">
                             <a href="about.html" class="nav-item nav-link">About</a>
                         </li>
-                        <li class="logged-out">
+                        <li class="logged-out" style="display: none;">
                             <a href="service.html" class="nav-item nav-link">Service</a>
                         </li>
-                        <li class="logged-in">
-                            <a href="price.html" class="nav-item nav-link">Price</a>
+                        <li class="logged-in" style="display: none;">
+                            <a href="price.html" class="nav-item nav-link">Purchase</a>
                         </li>
-                        <li class="logged-in">
-                            <a href="calendar.html" class="nav-item nav-link">calendar</a>
+                        <li class="logged-in" style="display: none;">
+                            <a href="calendar.html" class="nav-item nav-link">Calendar</a>
                         </li>
                         
                      <!-- <div class="nav-item dropdown">
@@ -114,11 +114,14 @@
                                 <a href="single.html" class="dropdown-item">Blog Detail</a>
                             </div>
                         </div> -->
-                        <li class="logged-out">
+                        <li class="logged-out-invisible" style="display: none;">
+                            <a href="/Stree/LoginRegister/index.html" class="nav-item nav-link">Login or Sign Up</a>
+                        </li>
+                        <li class="logged-out" style="display: none;">
                             <a href="contact.html" class="nav-item nav-link active">Contact</a>
                         </li>
-                        <li class="logged-in">
-                            <a href="indexloggedout.html" class="nav-item nav-link" id="logout">Log Out</a>
+                        <li class="logged-in" style="display: none;">
+                            <a href="index.html" class="nav-item nav-link" id = "logout">Log Out</a>
                         </li>
                     </div>
                 </div>
@@ -244,6 +247,7 @@
         <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-firestore.js"></script>
 
         <!-- TODO: Add SDKs for Firebase products that you want to use
             https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -260,7 +264,8 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-
+        const auth = firebase.auth();
+        const db = firebase.firestore();
         //reference messages collection
         var messagesRef = firebase.database().ref('messages');
 
@@ -286,5 +291,6 @@
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
         <script src="navigation.js"></script>
+        <script src="/Stree/LoginRegister/authlogout.js"></script>
     </body>
 </html>
