@@ -95,6 +95,7 @@
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <a href="service.html" class="nav-item nav-link">Service</a>
                         <a href="price.html" class="nav-item nav-link">Price</a>
+                        <a href="calendar.html" class="nav-item nav-link">calendar</a>
                         <!-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
                             <div class="dropdown-menu">
@@ -173,7 +174,7 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="control-group">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                                    <input type="text" class="form-control" id="phone" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="control-group">
@@ -221,6 +222,37 @@
 <!-- Footer End -->
 
         <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-database.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAxNpYy-IjARkWtiPHNq-vjnozGHkG3_j0",
+            authDomain: "login-27a9b.firebaseapp.com",
+            projectId: "login-27a9b",
+            storageBucket: "login-27a9b.appspot.com",
+            messagingSenderId: "358218026922",
+            appId: "1:358218026922:web:b9a8c3301592178912a5d3"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        //reference messages collection
+        var messagesRef = firebase.database().ref('messages');
+
+        </script>
+
+        <script src="/Stree/js/contact.js"></script>
+
+
 
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
