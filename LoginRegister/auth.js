@@ -8,18 +8,27 @@ singupForm.addEventListener('submit', (e) => {
     const password = singupForm['password_field'].value;
 
     // console.log(email, password);
-    auth.createUserWithEmailAndPassword(email, password).then(cred => {
-        auth.onAuthStateChanged(function(user) {
-            if(user) {
-                //user is signed in
-                console.log('logged in');
-                window.location = '/Stree/index.html';
-            }
-            else {
-                //user is signed out
-                console.log('not logged in');
-                window.location = 'index.html';
-            }
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION).then(() => {
+        auth.createUserWithEmailAndPassword(email, password).then(cred => {
+            auth.onAuthStateChanged(function(user) {
+                if(user) {
+                    //user is signed in
+                    console.log('logged in');
+                    window.location = '/Stree/index.html';
+                    //window.location = 'loggedin.html';
+                    //get data
+                    // db.collection('guides').get().then(snapshot => {
+                    // //console.log(snapshot.docs);
+                    // setupUI(user);
+                    // });
+                }
+                else {
+                    //user is signed out
+                    console.log('not logged in');
+                    window.location = 'index.html';
+                    // setupUI(user);
+                }
+            });
         });
     });
 });
@@ -34,34 +43,37 @@ loginForm.addEventListener('submit', (e) => {
     const email = loginForm['login-email'].value;
     const password = loginForm['login-password'].value;
 
-
-    auth.signInWithEmailAndPassword(email, password)
-        .then(cred => {
-            auth.onAuthStateChanged(function(user) {
-                if(user) {
-                    //user is signed in
-                    console.log('logged in');
-                    window.location = '/Stree/index.html';
-                }
-                else {
-                    //user is signed out
-                    console.log('not logged in');
-                    window.location = 'index.html';
-                }
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION).then(() => {
+        auth.signInWithEmailAndPassword(email, password).then(cred => {
+                auth.onAuthStateChanged(function(user) {
+                    if(user) {
+                        //user is signed in
+                        console.log('logged in');
+                        window.location = '/Stree/index.html';
+                        //window.location = 'loggedin.html';
+                        //get data
+                            // db.collection('guides').get().then(snapshot => {
+                            // //console.log(snapshot.docs);
+                            // //setupUI(user);
+                            // });
+                    }
+                    else {
+                        //user is signed out
+                        console.log('not logged in');
+                        window.location = 'index.html';
+                        //setupUI(user);
+                    }
+                });
+            })
+            .catch(function(error){
+                //handle errors here
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                
+                window.alert("Error: " + errorMessage);
             });
-        })
-        .catch(function(error){
-            //handle errors here
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            
-            window.alert("Error: " + errorMessage);
-        });
+    });
 });
-
-
-
-
 
 
 
