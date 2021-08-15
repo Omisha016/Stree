@@ -71,20 +71,20 @@
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <li class="logged-out">
+                        <li class="logged-out" style="display: none;">
                             <a href="index.html" class="nav-item nav-link">Home</a>
                         </li>
-                        <li class="logged-out">
+                        <li class="logged-out" style="display: none;">
                             <a href="about.html" class="nav-item nav-link">About</a>
                         </li>
-                        <li class="logged-out">
+                        <li class="logged-out" style="display: none;">
                             <a href="service.html" class="nav-item nav-link">Service</a>
                         </li>
-                        <li class="logged-in">
-                            <a href="price.html" class="nav-item nav-link active">Price</a>
+                        <li class="logged-in" style="display: none;">
+                            <a href="price.html" class="nav-item nav-link active">Purchase</a>
                         </li>
-                        <li class="logged-in">
-                            <a href="calendar.html" class="nav-item nav-link">calendar</a>
+                        <li class="logged-in" style="display: none;">
+                            <a href="calendar.html" class="nav-item nav-link">Calendar</a>
                         </li>
                         
                      <!-- <div class="nav-item dropdown">
@@ -94,11 +94,14 @@
                                 <a href="single.html" class="dropdown-item">Blog Detail</a>
                             </div>
                         </div> -->
-                        <li class="logged-out">
+                        <li class="logged-out-invisible" style="display: none;">
+                            <a href="/Stree/LoginRegister/index.html" class="nav-item nav-link">Login or Sign Up</a>
+                        </li>
+                        <li class="logged-out" style="display: none;">
                             <a href="contact.html" class="nav-item nav-link">Contact</a>
                         </li>
-                        <li class="logged-in">
-                            <a href="indexloggedout.html" class="nav-item nav-link" id="logout">Log Out</a>
+                        <li class="logged-in" style="display: none;">
+                            <a href="index.html" class="nav-item nav-link" id = "logout">Log Out</a>
                         </li>
                     </div>
                 </div>
@@ -261,6 +264,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
         <script src="Shopping/main.js"></script>
         <script src="js/main.js"></script>
-        
+        <script src="/Stree/LoginRegister/authlogout.js"></script>
     </body>
 </html>
