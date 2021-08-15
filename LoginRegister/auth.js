@@ -14,7 +14,7 @@ singupForm.addEventListener('submit', (e) => {
                 if(user) {
                     //user is signed in
                     console.log('logged in');
-                    window.location = '/Stree/index.html';
+                    window.location = '../index.html';
                     //window.location = 'loggedin.html';
                     //get data
                     // db.collection('guides').get().then(snapshot => {
@@ -49,7 +49,7 @@ loginForm.addEventListener('submit', (e) => {
                     if(user) {
                         //user is signed in
                         console.log('logged in');
-                        window.location = '/Stree/index.html';
+                        window.location = '../index.html';
                         //window.location = 'loggedin.html';
                         //get data
                             // db.collection('guides').get().then(snapshot => {
