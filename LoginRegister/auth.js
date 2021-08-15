@@ -29,6 +29,13 @@ singupForm.addEventListener('submit', (e) => {
                     // setupUI(user);
                 }
             });
+        })
+        .catch(function(error){
+            //handle errors here
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            
+            window.alert("Error: " + errorMessage);
         });
     });
 });
