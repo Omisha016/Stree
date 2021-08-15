@@ -24,7 +24,11 @@
                     <h1>Login</h1>
                     <input type="email" placeholder="Email" id="login-email" />
                     <input type="password" placeholder="Password" id="login-password"/>
-                    <a href="/LoginRegister/forgotpassword.html" class="links">Forgot Your Password?</a>
+                    <div class="links">
+                    <a href="forgotpassword.html">Forgot Your Password?</a>
+                    <br><br>
+                    <a href="/Stree/index.html">Return To Home Page</a>
+                    </div>
                     <button>Login</button>
                 </form>
             </div>
@@ -81,7 +85,7 @@
     firebase.initializeApp(firebaseConfig);
     //make auth and firestore references 
     const auth = firebase.auth();
-    const db = firebase.firestore();
+    //const db = firebase.firestore();
     </script>
     
     <script src="auth.js"></script>
